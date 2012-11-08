@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <Company_Observer>
+            <version>0.1.0</version>
+        </Company_Observer>
+    </modules>
+    <global>
+        <models>
+            <myobserver>
+                <class>Company_Observer_Model</class>
+            </myobserver>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <customer_login>
+                <observers>
+                    <my_unique_identifier>
+                        <type>singleton</type>
+                        <class>myobserver/observer</class>
+                        <method>someFunction</method>
+                    </my_unique_identifier>
+                </observers>
+            </customer_login>
+        </events>
+    </frontend>
+</config>
